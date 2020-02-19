@@ -1,3 +1,49 @@
 <ion-app>
+  <ion-header>
+    <ion-toolbar color="danger">
+      <ion-buttons slot="start">
+        <ion-avatar>
+          <img src="../assets/images/app_logo.jpeg" />
+        </ion-avatar>
+      </ion-buttons>
+      <ion-title>Madurai MP</ion-title>
+      <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon slot="end" name="person-circle"></ion-icon>
+        </ion-button>
+        <ion-button>
+          <ion-icon slot="end" name="notifications-outline"></ion-icon>
+        </ion-button>
+        <ion-button>
+          <ion-icon
+            slot="icon-only"
+            ios="ellipsis-vertical"
+            md="ellipsis-vertical"
+          ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
   <ion-router-outlet></ion-router-outlet>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" color="dark">
+      <ion-tab-button tab="home">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>Home Feed</ion-label>
+        <ion-badge>6</ion-badge>
+      </ion-tab-button>
+      <ion-tab-button tab="schedule">
+        <ion-icon name="calendar"></ion-icon>
+        <ion-label>Schedule</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="videofeeds">
+        <ion-icon name="logo-youtube"></ion-icon>
+        <ion-label>Videos</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="contactus">
+        <ion-icon name="person-circle"></ion-icon>
+        <ion-label>Contact Us</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-app>
