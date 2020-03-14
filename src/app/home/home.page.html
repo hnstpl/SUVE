@@ -7,37 +7,38 @@
     </ion-chip>
   </div>
   <div class="horizontal-card-scroll">
-    <ion-card>
-      <ion-card-header>
-        <ion-item lines="none" class="card-ion-top-items">
-          <ion-avatar slot="start">
-            <img src="../../assets/images/svenkatesan1.jpeg" />
-          </ion-avatar>
+    <div class="card" *ngFor="let feed of homeFeedsArray">
+      <ion-card>
+        <ion-card-header>
+          <ion-item lines="none" class="card-ion-top-items">
+            <ion-avatar slot="start">
+              <img src="../../assets/images/svenkatesan1.jpeg" />
+            </ion-avatar>
+            <ion-label>
+              <h3>Su Venkatesan</h3>
+              <p>
+                {{ feed.DateContent }} - {{ feed.Type | feedcategory }}
+              </p>
+            </ion-label>
+          </ion-item>
+        </ion-card-header>
+        <img [src]=feed.ImageURL class="card-image" />
+        <ion-card-content>
+          <p class="card-content-para">
+            {{feed.TextContent}}
+          </p>
+        </ion-card-content>
+        <div class="card-footer">
+          <ion-icon name="book-outline" class="card-footer-padding"></ion-icon>
           <ion-label>
-            <h3>Su Venkatesan</h3>
-            <p>15 February 2020 Keezhadi</p>
+            Read Article
           </ion-label>
-        </ion-item>
-      </ion-card-header>
-      <img src="../../assets/images/sp4.png" class="card-image" />
-      <ion-card-content>
-        <p class="card-content-para">
-          கீழடி ஆய்வுகள் குறித்து நானும், திமுக பாராளுமன்ற உறுப்பினர் மு.க.
-          கனிமொழி அவர்களும், காங்கிரஸ் சிவகங்கை பாராளுமன்ற உறுப்பினர் திரு
-          கார்த்திக் சிதம்பரம் அவர்களும் மத்திய கலாச்சாரத்துறை அமைச்சர்
-          ப்ரஹ்லாத் சிங் பட்டேல் அவர்களை நேரில் சந்தித்து பேசினோம்
-        </p>
-      </ion-card-content>
-      <div class="card-footer">
-        <ion-icon name="book-outline" class="card-footer-padding"></ion-icon>
-        <ion-label>
-          Read Article
-        </ion-label>
-        <ion-icon name="share-outline" class="card-footer-padding"></ion-icon>
-        <ion-label>
-          Share
-        </ion-label>
-      </div>
-    </ion-card>
+          <ion-icon name="share-outline" class="card-footer-padding"></ion-icon>
+          <ion-label>
+            Share
+          </ion-label>
+        </div>
+      </ion-card>
+    </div>
   </div>
 </ion-content>

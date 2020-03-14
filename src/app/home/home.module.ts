@@ -1,3 +1,4 @@
+import { FeedcategoryPipe } from "./../pipes/feedcategory.pipe";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { IonicModule } from "@ionic/angular";
@@ -18,6 +19,7 @@ import { HeaderComponent } from "./../header/header.component";
       }
     ])
   ],
-  declarations: [HomePage, HeaderComponent]
+  providers: [FeedcategoryPipe],
+  declarations: [HomePage, HeaderComponent, FeedcategoryPipe]
 })
 export class HomePageModule {}
