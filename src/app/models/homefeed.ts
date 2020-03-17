@@ -6,16 +6,16 @@ export class HomeFeed {
   DateContent: string;
 
   constructor(
-    _id: string,
-    _textContent: string,
-    _imageUrl: string,
-    _type: string,
-    _dateContent: string
+    id: string,
+    textContent: string,
+    imageUrl: string,
+    type: string,
+    dateContent: string
   ) {
-    this.ID = _id;
-    this.TextContent = _textContent;
-    this.ImageURL = _imageUrl;
-    this.Type = _type;
-    this.DateContent = _dateContent;
+    this.ID = id;
+    this.TextContent = textContent;
+    this.ImageURL = imageUrl;
+    this.Type = type;
+    this.DateContent = dateContent;
   }
 }

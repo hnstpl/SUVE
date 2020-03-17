@@ -2,6 +2,7 @@ import { TwitterService } from "./../services/twitter.service";
 import { HomeFeed } from "./../models/homefeed";
 import { HomefeedService } from "./../services/homefeed.service";
 import { Component } from "@angular/core";
+import { Tweet } from "../models/tweet";
 @Component({
   selector: "app-home",
   templateUrl: "home.page.html",
@@ -10,13 +11,18 @@ import { Component } from "@angular/core";
 export class HomePage {
   feedCategories = ["Social Schemes", "Manifesto", "Keezhadi", "Madurai"];
   homeFeedsArray: HomeFeed[] = [];
-
+  tweets: Tweet[] = [];
   constructor(
     private homefeedService: HomefeedService,
-    private twitter: TwitterService
+    private twitterService: TwitterService
   ) {}
 
   ngOnInit() {
+    this.loadHomeFeeds();
+    this.loadTwitterFeeds();
+  }
+
+  loadHomeFeeds() {
     this.homefeedService
       .getAll()
       .snapshotChanges()
@@ -32,7 +38,7 @@ export class HomePage {
             item.payload.val().ImageURL +
             `_720x480.jpg?alt=media`;
 
-          let homeFeed = new HomeFeed(
+          const homeFeed = new HomeFeed(
             Id,
             textContent,
             imageUrl,
@@ -41,7 +47,22 @@ export class HomePage {
           );
           this.homeFeedsArray.push(homeFeed);
         });
-        console.log(this.homeFeedsArray);
       });
+  }
+
+  loadTwitterFeeds() {
+    this.twitterService.getTopUserTimelines().subscribe(data => {
+      // this.twitterFeeds = data;
+      for (const twit of data as any) {
+        const twitText = twit.text;
+        let imageUrl = "../../assets/images/twitter.jpeg";
+        if (twit.extended_entities) {
+          imageUrl = twit.extended_entities.media[0].media_url;
+        }
+        const tweet = new Tweet(twitText, imageUrl);
+        this.tweets.push(tweet);
+      }
+      console.log(this.tweets);
+    });
   }
 }

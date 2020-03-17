@@ -22,7 +22,7 @@
             </ion-label>
           </ion-item>
         </ion-card-header>
-        <img [src]=feed.ImageURL class="card-image" />
+        <img [src]="feed.ImageURL" class="card-image" />
         <ion-card-content>
           <p class="card-content-para">
             {{feed.TextContent}}
@@ -39,6 +39,27 @@
           </ion-label>
         </div>
       </ion-card>
+    </div>
+  </div>
+  <div class="horizontal-card-scroll">
+    <div class="card" *ngFor="let twit of tweets">
+      <ion-card-header>
+        <ion-item lines="none" class="card-ion-top-items">
+          <ion-label class="text-center">
+            <h2>Twitter Bytes from SuVe</h2>
+          </ion-label>
+        </ion-item>
+      </ion-card-header>
+      <img
+        [src]="twit.ImageUrl"
+        class="card-image"
+        style="width: 180px; height: 150px;"
+      />
+      <ion-card-content>
+        <p class="card-content-para">
+          {{twit.Text}}
+        </p>
+      </ion-card-content>
     </div>
   </div>
 </ion-content>
