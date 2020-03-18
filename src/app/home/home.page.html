@@ -41,8 +41,10 @@
       </ion-card>
     </div>
   </div>
+
   <div class="horizontal-card-scroll">
     <div class="card" *ngFor="let twit of tweets">
+    <ion-card>
       <ion-card-header>
         <ion-item lines="none" class="card-ion-top-items">
           <ion-label class="text-center">
@@ -50,16 +52,17 @@
           </ion-label>
         </ion-item>
       </ion-card-header>
-      <img
+      <img 
         [src]="twit.ImageUrl"
-        class="card-image"
-        style="width: 180px; height: 150px;"
+        class="twt_image"
+        style="width: 180px; height: 150px; align-content: center;"
       />
       <ion-card-content>
         <p class="card-content-para">
           {{twit.Text}}
         </p>
       </ion-card-content>
+    </ion-card>
     </div>
   </div>
 </ion-content>

@@ -55,7 +55,7 @@ export class HomePage {
       // this.twitterFeeds = data;
       for (const twit of data as any) {
         const twitText = twit.text;
-        let imageUrl = "../../assets/images/twitter.jpeg";
+        let imageUrl = "../../assets/images/twitter.png";
         if (twit.extended_entities) {
           imageUrl = twit.extended_entities.media[0].media_url;
         }

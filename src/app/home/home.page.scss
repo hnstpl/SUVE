@@ -33,6 +33,11 @@ ion-content ion-toolbar {
   background-color: #b71c1c;
 }
 
+ion-chip.ion-color.ion-color-light.ios.ion-activatable.hydrated {
+  background: #e0e0e0;
+  color: #505050;
+}
+
 .horizontal-card-scroll {
   overflow-x: scroll;
   overflow-y: hidden;
@@ -42,14 +47,26 @@ ion-content ion-toolbar {
     display: none;
   }
   .card {
-    display: inline-block;
+      display: inline-block;
+      flex-direction: row;
+      align-items: center;
+      background-color: transparent;
+      flex-wrap: nowrap;
+    
   }
 }
 
 .card-content-para {
   white-space: normal;
+  height: calc(25vh - 68px); 
 }
-
+.card-content-ios p {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 2px;
+  font-size: 11px;
+}
 .card-ion-top-items {
   margin-top: -15px;
   margin-left: -18px;
@@ -59,14 +76,53 @@ ion-content ion-toolbar {
   padding-left: 7px;
   padding-right: 7px;
   margin-top: -7px;
+  width: 100vw;
+  height: calc(42vh - 68px);
+  
 }
 
+.twt_image{
+  display: block;
+    margin-left: auto;
+    margin-right: auto
+}
 .card-footer {
   text-align: center;
   padding-bottom: 10px;
+  font-size:12px;
 }
 
 .card-footer-padding {
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.sc-ion-label-ios-s p {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 2px;
+  font-size: 11px;
+  line-height: normal;
+  text-overflow: inherit;
+  overflow: inherit;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+.item.sc-ion-label-ios-h, .item .sc-ion-label-ios-h {
+  --color: initial;
+  display: block;
+  color: var(--color);
+  font-family: var(--ion-font-family,inherit);
+  font-size: 15px;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
 }
