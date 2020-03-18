@@ -39,6 +39,7 @@ ion-chip.ion-color.ion-color-light.ios.ion-activatable.hydrated {
 }
 
 .horizontal-card-scroll {
+  margin-top: -10px;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
@@ -58,7 +59,7 @@ ion-chip.ion-color.ion-color-light.ios.ion-activatable.hydrated {
 
 .card-content-para {
   white-space: normal;
-  height: calc(25vh - 68px); 
+  height: calc(35vh - 68px); 
 }
 .card-content-ios p {
   margin-left: 0;
@@ -90,6 +91,10 @@ ion-chip.ion-color.ion-color-light.ios.ion-activatable.hydrated {
   text-align: center;
   padding-bottom: 10px;
   font-size:12px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1.5rem;  
 }
 
 .card-footer-padding {
